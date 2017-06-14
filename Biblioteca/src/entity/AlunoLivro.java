@@ -4,8 +4,12 @@ import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
 
-@Entity(name="aluno_livro")
+@Entity
+@Table(name="aluno_livro")
+@NamedQuery(name="buscarEmprestimos", query="select al from AlunoLivro al")
 public class AlunoLivro {
 	
 	@EmbeddedId
